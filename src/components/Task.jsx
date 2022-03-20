@@ -14,7 +14,7 @@ const Task = () => {
       <div className='submitted-task'></div>
       <div className='add-task'>
         <button onClick={() => setIsOpen(true)}>Add Task</button>
-        {isOpen ? <Modal setIsOpen={setIsOpen} /> : <h1>Hello</h1>}
+        {isOpen && <Modal setIsOpen={(v) => setIsOpen(v)} />}
       </div>
     </div>
   );
