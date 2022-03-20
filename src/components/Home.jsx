@@ -16,13 +16,13 @@ const Home = () => {
 
   useEffect(() => {
     getResult();
-  }, []);
+  }, [tasks]);
 
   return (
     <div className={`${styles.task} flex`}>
       <h3>Tasks</h3>
       {tasks.map((task) => (
-        <Task data={task} />
+        <Task key={task._id} data={task} />
       ))}
       <Button name='Add Task' onClick={() => setIsOpen(true)} />
       {isOpen && <Modal setIsOpen={setIsOpen} />}
