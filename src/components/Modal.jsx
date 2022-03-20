@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
-import Button from "./Button";
 
 const Modal = ({ setIsOpen }) => {
   return (
