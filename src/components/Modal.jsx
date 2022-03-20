@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 
@@ -13,25 +12,22 @@ const Modal = ({ setIsOpen }) => {
             </div>
             <button
               className={styles.closeBtn}
-              onClick={() => setIsOpen(false)}
-            >
+              onClick={() => setIsOpen(false)}>
               <RiCloseLine style={{ marginBottom: "-3px" }} />
             </button>
             <div className={styles.modalContent}>
-              <input type="text" />
+              <input type='text' />
             </div>
             <div className={styles.modalActions}>
               <div className={styles.actionsContainer}>
                 <button
                   className={styles.deleteBtn}
-                  onClick={() => setIsOpen(false)}
-                >
+                  onClick={() => setIsOpen(false)}>
                   Delete
                 </button>
                 <button
                   className={styles.cancelBtn}
-                  onClick={() => setIsOpen(false)}
-                >
+                  onClick={() => setIsOpen(false)}>
                   Cancel
                 </button>
               </div>

@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "./components/Nav";
-import Task from "./components/Task";
+import Home from "./components/Home";
 
 const App = () => {
   return (
     <>
       <Nav />
-      <Task />
+      <Home />
     </>
   );
 };
