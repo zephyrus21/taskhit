@@ -9,7 +9,9 @@ const Home = () => {
   const [tasks, setTasks] = useState([]);
 
   const getResult = async () => {
-    const result = await fetch("https://taskhit-api.herokuapp.com/tasks");
+    const result = await fetch("https://taskhit-api.herokuapp.com/tasks", {
+      mode: "no-cors",
+    });
     const data = await result.json();
     setTasks(data);
   };
