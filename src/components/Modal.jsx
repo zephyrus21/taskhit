@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/Modal.module.css";
 
-const Modal = ({ setIsOpen }) => {
+const Modal = ({ setIsOpen, tasks, setTasks }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [user, setUser] = useState("");
@@ -17,7 +17,10 @@ const Modal = ({ setIsOpen }) => {
       "https://taskhit-api.herokuapp.com/task/create",
       requestOptions
     );
+
     await result.json();
+
+    setTasks([...tasks, { title, description, user }]);
     setIsOpen(false);
   };
 

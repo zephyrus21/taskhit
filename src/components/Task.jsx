@@ -2,17 +2,21 @@ import React from "react";
 import styles from "../styles/Task.module.css";
 import Delete from "../assets/Delete.svg";
 
-const Task = ({ data }) => {
+const Task = ({ data, tasks, setTasks }) => {
   const deleteTaskHandler = async (id) => {
     const requestOptions = {
       method: "DELETE",
+      headers: { "Content-Type": "application/json" },
     };
 
     const result = await fetch(
       `https://taskhit-api.herokuapp.com/delete/${id}`,
       requestOptions
     );
+
     await result.json();
+
+    setTasks(tasks.filter(({ _id: i }) => id !== i));
   };
 
   return (
