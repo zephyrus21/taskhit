@@ -11,7 +11,6 @@ const Modal = ({ setIsOpen }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, description, user }),
-      mode: "no-cors",
     };
 
     const result = await fetch(
@@ -32,20 +31,20 @@ const Modal = ({ setIsOpen }) => {
             </div>
             <div className={styles.modalContent}>
               <input
-                placeholder='Title'
-                type='text'
+                placeholder="Title"
+                type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
               <input
-                placeholder='Description'
-                type='text'
+                placeholder="Description"
+                type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
               <input
-                placeholder='User'
-                type='text'
+                placeholder="User"
+                type="text"
                 value={user}
                 onChange={(e) => setUser(e.target.value)}
               />
@@ -57,7 +56,8 @@ const Modal = ({ setIsOpen }) => {
                 </button>
                 <button
                   className={styles.cancelBtn}
-                  onClick={() => setIsOpen(false)}>
+                  onClick={() => setIsOpen(false)}
+                >
                   Cancel
                 </button>
               </div>
